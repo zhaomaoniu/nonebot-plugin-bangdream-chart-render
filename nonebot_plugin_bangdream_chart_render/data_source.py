@@ -22,10 +22,10 @@ class SongData(object):
         self.song = await fetch_data("https://bestdori.com/api/songs/all.5.json", "data/song/", "all.5.json", False)
         self.band = await fetch_data("https://bestdori.com/api/bands/all.1.json", "data/band/", "all.1.json", False)
 
-        if os.path.exists('data/song/nickname.csv'):
-            self.nickname = read_csv_to_dict('data/song/nickname.csv')
-        elif os.path.exists('data/song/nickname.xlsx'):
-            self.nickname = read_xlsx_to_dict('data/song/nickname.xlsx')
+        if os.path.exists('data/bcr/nickname.csv'):
+            self.nickname = read_csv_to_dict('data/bcr/nickname.csv')
+        elif os.path.exists('data/bcr/nickname.xlsx'):
+            self.nickname = read_xlsx_to_dict('data/bcr/nickname.xlsx')
         else:
             logger.warning("未配置歌曲别名文件，插件将不能正常运行！")
             self.nickname = {}
